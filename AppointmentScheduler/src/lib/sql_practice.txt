@@ -1,0 +1,76 @@
+CREATE TABLE products 
+(product_id NUMBER(9),  
+ product_title VARCHAR2(20 BYTE),  
+ supplier_id NUMBER(9),  
+ price_per NUMBER(10, 2), 
+ catalog_no VARCHAR2(15 BYTE), 
+ cat_pg_no VARCHAR2(15 BYTE), 
+ perishable CHAR(1 BYTE), 
+ entered DATE)
+
+CREATE TABLE suppliers 
+(supplier_id number(9), 
+ supplier_name VARCHAR2(20 BYTE), 
+ address_id number(9), 
+ discount VARCHAR2(20 BYTE), 
+ contact_id NUMBER(9), 
+ response_time INTERVAL DAY TO SECOND)
+
+CREATE TABLE addresses 
+(address_id NUMBER(9), 
+ street VARCHAR2(25 BYTE), 
+ suite VARCHAR2(25 BYTE), 
+ city VARCHAR2(25 BYTE), 
+ state VARCHAR2(2 BYTE), 
+ zip_base VARCHAR2(5 BYTE), 
+ zip_plus VARCHAR2(4 BYTE))
+
+CREATE TABLE employees 
+(employee_id NUMBER(9), 
+ first_name VARCHAR2(25 BYTE), 
+ last_name VARCHAR2(25 BYTE), 
+ notes CLOB, 
+ resume CLOB, 
+ address_id NUMBER(9), 
+ store_id NUMBER(9))
+
+CREATE TABLE stores 
+(store_id NUMBER(9), 
+ store_name VARCHAR2(10 BYTE), 
+ store_mgr_id NUMBER(9), 
+ address_id NUMBER(9))
+
+CREATE TABLE contacts 
+(contact_id NUMBER(9), 
+ first_name VARCHAR2(25 BYTE), 
+ last_name VARCHAR2(35 BYTE), 
+ address_id NUMBER(9))
+
+CREATE TABLE orders 
+(order_id NUMBER(9), 
+ supplier_id NUMBER(9), 
+ source VARCHAR2(15 BYTE), 
+ status VARCHAR2(10 BYTE), 
+ recurring char(1 BYTE), 
+ order_total number(9,2), 
+ order_date TIMESTAMP WITH TIME ZONE)
+
+CREATE TABLE line_items 
+(line_item_id NUMBER(9), 
+ order_id NUMBER(9), 
+ quantity NUMBER(9), 
+ product_id NUMBER(9), 
+ discount VARCHAR2(15 BYTE), 
+ net_price NUMBER(10,2))
+
+
+
+INSERT INTO products (product_id, product_title, entered) VALUES(1, 'Floor lamp', TO_DATE('09-SEP-02 17:30','YY-MON-DD HH24:MI'));
+INSERT INTO products (product_id, product_title, entered) VALUES(2, 'TV Stand', TO_DATE('09-SEP-02 17:30','YY-MON-DD HH24:MI'));
+INSERT INTO products (product_id, product_title, entered) VALUES(3, 'Wood shelf', TO_DATE('09-SEP-02 17:30','YY-MON-DD HH24:MI'));
+INSERT INTO products (product_id, product_title, entered) VALUES(4, 'Cupboard', TO_DATE('09-SEP-02 17:30','YY-MON-DD HH24:MI'));
+
+INSERT INTO suppliers (supplier_id, supplier_name, discount) VALUES (1, 'Acme Wholesale', .1);
+INSERT INTO suppliers (supplier_id, supplier_name, discount) VALUES (2, 'Jebson Factory', .25);
+INSERT INTO suppliers (supplier_id, supplier_name, discount) VALUES (3, 'Wilson Farms', null);
+INSERT INTO suppliers (supplier_id, supplier_name, discount) VALUES (4, 'Dee Distributors', 0);

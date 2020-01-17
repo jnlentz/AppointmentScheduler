@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="462.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appointmentscheduler.LoginController">
+    <children>
+      <VBox alignment="CENTER" layoutX="32.0" layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="400.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0">
+               <children>
+                  <Label fx:id="usernameLabel" layoutX="19.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" text="Username:" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="227.0" AnchorPane.topAnchor="3.0" />
+                  <TextField fx:id="usernameText" layoutX="65.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="200.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0">
+               <children>
+                    <Label fx:id="passwordLabel" layoutX="6.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" text="Password:" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="227.0" AnchorPane.topAnchor="3.0" />
+                  <PasswordField fx:id="passwordText" layoutX="102.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="200.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <Button fx:id="loginButton" defaultButton="true" layoutX="203.0" layoutY="145.0" mnemonicParsing="false" onAction="#validate" text="Login" />
+    </children>
+</AnchorPane>

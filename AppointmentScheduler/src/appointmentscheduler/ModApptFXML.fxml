@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minWidth="-Infinity" prefHeight="569.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appointmentscheduler.ModApptController">
+   <children>
+      <HBox layoutX="855.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="305.0" />
+      <TableView fx:id="cstrTable" layoutX="463.0" layoutY="92.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#tableSelected" prefHeight="353.0" prefWidth="428.0">
+         <columns>
+            <TableColumn fx:id="id" maxWidth="225.0" minWidth="71.0" prefWidth="128.0" resizable="false" text="ID" />
+            <TableColumn fx:id="name" maxWidth="368.0" minWidth="160.0" prefWidth="311.0" resizable="false" text="Customer Name" />
+         </columns>
+      </TableView>
+      <Label layoutX="17.0" layoutY="14.0" text="Modify Appointment">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <VBox layoutX="14.0" layoutY="92.0" prefHeight="310.0" prefWidth="400.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="400.0">
+               <children>
+                  <TextField fx:id="titleText" layoutX="154.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="200.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
+                  <Label layoutX="64.0" layoutY="13.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="39.0" text="Title:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="3.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="400.0">
+               <children>
+                  <TextField fx:id="typeText" layoutX="154.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="200.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
+                  <Label layoutX="64.0" layoutY="13.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="39.0" text="Type:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="3.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="400.0">
+               <children>
+                  <TextField fx:id="descText" layoutX="159.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="200.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
+                  <Label layoutX="83.0" layoutY="6.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="39.0" text="Description:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="3.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="400.0">
+               <children>
+                  <Label layoutX="83.0" layoutY="6.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="39.0" text="Location:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="3.0" />
+                  <ChoiceBox fx:id="locBox" layoutX="163.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="200.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="400.0">
+               <children>
+                  <Label layoutX="64.0" layoutY="13.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="39.0" text="Consultant:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="3.0" />
+                  <ChoiceBox fx:id="contactBox" layoutX="210.0" layoutY="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="200.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="400.0">
+               <children>
+                  <Label layoutX="71.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="39.0" text="Date:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="3.0" />
+                  <DatePicker fx:id="dateBox" layoutX="204.0" onAction="#onDateSelect" prefHeight="39.0" prefWidth="200.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="400.0">
+               <children>
+                  <Label layoutX="76.0" layoutY="2.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="39.0" text="From:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="3.0" />
+                  <Label layoutX="86.0" layoutY="12.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="39.0" text="To:" AnchorPane.leftAnchor="225.0" AnchorPane.topAnchor="3.0" />
+                  <ChoiceBox fx:id="startBox" layoutX="80.0" layoutY="11.0" prefHeight="39.0" prefWidth="75.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="3.0" />
+                  <ChoiceBox fx:id="endBox" layoutX="281.0" layoutY="7.0" prefHeight="39.0" prefWidth="75.0" AnchorPane.leftAnchor="260.0" AnchorPane.topAnchor="3.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <Button fx:id="saveButton" layoutX="149.0" layoutY="445.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
+      <Button layoutX="821.0" layoutY="524.0" mnemonicParsing="false" onAction="#closeWindow" text="Cancel" />
+   </children>
+</AnchorPane>
